@@ -1,0 +1,227 @@
+@font-face {
+    font-family: 'Grtsk Giga';
+    src: local('Grtsk Giga Bold'), local('Grtsk-Giga-Bold'),
+    url('../font/GrtskGiga-Bold.woff2') format('woff2'),
+    url('../font/GrtskGiga-Bold.woff') format('woff'),
+    url('../font/GrtskGiga-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    background-color: #E5E5E5;
+    font-family: "Grtsk Giga", sans-serif;
+    padding: 24px 19px;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/*header*/
+header{
+    display: flex;
+    justify-content: space-between;
+}
+/*navigation*/
+
+.nav_bar ul {
+    text-decoration: none;
+    list-style: none;
+}
+.nav_bar .toggle__menu{
+    display: none;
+}
+
+.nav_bar ul a {
+    text-decoration: none;
+}
+.navbar-nav .navbar-item{
+    position: absolute;
+}
+.navbar-item:first-child{
+    top: 50%;
+    left: 0;
+    transform: rotate(90deg);
+}
+.navbar-item:nth-child(2){
+    bottom: 10%;
+    left: 50%;
+}
+.navbar-item:last-child{
+    top: 50%;
+    right: 0;
+    transform: rotate(270deg);
+}
+
+/*running tape*/
+main {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    max-width: calc(100% - 50px);
+    width: 100%;
+}
+
+main .container {
+    position: relative;
+}
+
+.text__content {
+    position: relative;
+    height: 578px;
+    z-index: 1;
+    text-align: center;
+    align-items: center;
+}
+.text__content h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+}
+
+.text__content:before {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    content: "";
+    height: 578px;
+    width: 578px;
+    background: #FFCB46;
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(76px)
+}
+
+.top__tape {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%) skew(230deg, 136deg);
+    height: 50px;
+    width: 100%;
+    margin: 0 auto;
+    background: none;
+    overflow: hidden;
+}
+
+.top__tape span {
+    position: absolute;
+    text-align: center;
+    display: inline-block;
+    color: rgba(255, 255, 255, .99);
+    text-shadow: 0px 0px 0 black;
+    text-transform: uppercase;
+    /*padding-top: 35px;*/
+    animation: left-dir 5s infinite linear;
+    /*padding-left: 100%;*/
+    white-space: nowrap;
+}
+
+@keyframes left-dir {
+    0% {
+        transform: translate(160%, 0);
+    }
+    100% {
+        transform: translate(-160%, 0);
+    }
+}
+
+.bottom__tape {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, 100%) skew(230deg, 136deg);
+    height: 50px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    /*background: #343436;*/
+}
+
+.bottom__tape span {
+    position: absolute;
+    text-align: center;
+    display: inline-block;
+    color: rgba(255, 255, 255, .99);
+    text-shadow: 0px 0px 0 black;
+    text-transform: uppercase;
+    /*padding-top: 35px;*/
+    animation: right-dir 5s infinite linear;
+    /*padding-left: 100%;*/
+    white-space: nowrap;
+}
+
+@keyframes right-dir {
+    0% {
+        transform: translate(-180%, 0);
+    }
+    100% {
+        transform: translate(180%, 0);
+    }
+}
+
+/*circle*/
+.show-reel__container {
+    width: 115px;
+    height: 115px;
+    position: relative;
+    top: 75%;
+    left: 60%;
+}
+
+
+.show-reel__container:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 5px;
+    height: 5px;
+    background-color: #000;
+    border-radius: 50%;
+}
+
+
+.show-reel__container:hover {
+    animation: circle 5s linear infinite;
+}
+
+@keyframes circle {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    /*mobile navigation*/
+
+    .navbar-nav .navbar-item{
+        position: relative;
+    }
+    .navbar-item:first-child{
+        top: 0;
+        left: 0;
+        transform: none;
+    }
+    .navbar-item:nth-child(2){
+        bottom: 0;
+        left: 0;
+    }
+    .navbar-item:last-child{
+        top: 0;
+        right: 0;
+        transform: none;
+    }
+}
