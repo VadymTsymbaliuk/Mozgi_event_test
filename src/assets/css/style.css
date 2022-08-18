@@ -53,8 +53,24 @@ header {
 
 /*logo*/
 
-.logo__container svg path {
-    fill: #BEBEBE;
+.logo {
+    width: 250px;
+    height: 250px;
+    display: block;
+}
+
+.logo-shader {
+    transform: translateY(100%);
+    /*animation: slideUp 2s ease-out infinite;*/
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
 }
 
 /*navigation*/
