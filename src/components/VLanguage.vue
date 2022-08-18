@@ -1,6 +1,6 @@
 <template>
   <div class="select__language-container">
-    <div class="chose__language" @mouseover="showOptions">
+    <div class="chose__language" @mouseover="showOptions" @touchstart="showOptions">
       <span>👅</span>
     </div>
     <div class="drop__language">
