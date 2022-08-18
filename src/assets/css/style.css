@@ -53,9 +53,14 @@ header {
     border-radius: 50%;
 }
 
+.drop__language {
+    margin-bottom: 5px;
+}
+
 .drop__language div {
     opacity: 0;
     transition: 0.5s;
+    text-align: center;
 }
 
 .drop__language div.show {
@@ -291,6 +296,10 @@ main .container {
     animation: circle 5s linear infinite;
 }
 
+.show-reel__container img {
+    max-width: 100%;
+}
+
 @keyframes circle {
     from {
         transform: rotate(0);
@@ -301,13 +310,19 @@ main .container {
 }
 
 @media screen and (max-width: 1024px) {
+    .logo {
+        width: 69px;
+        height: 38px;
+        display: block;
+    }
+
     .body {
         font-size: 14px;
     }
 
     main .text__content h1 {
         font-size: 4.14rem;
-        white-space: normal;
+        white-space: nowrap;
     }
 
     main .text__content:before {
@@ -320,9 +335,12 @@ main .container {
 /*max-width: 768px*/
 
 @media screen and (max-width: 767px) {
-    /*.body{*/
-    /*    p*/
-    /*}*/
+    .logo {
+        width: 65px;
+        height: 33px;
+        display: block;
+    }
+
     /*mobile navigation*/
     .nav_bar {
         position: relative;
@@ -401,22 +419,65 @@ main .container {
         height: 359px;
         filter: blur(58px)
     }
+
+    .show-reel__container {
+        width: 90px;
+        height: 90px;
+    }
+
+    .show-reel__container:after {
+        width: 6px;
+        height: 6px;
+    }
+
+    .tape__container div {
+        transform: skew(234deg, 125deg);
+        overflow: visible;
+    }
 }
 
 @media screen and (max-width: 375px) {
     .body {
         font-size: 12px;
+        padding: 16px;
+    }
+
+    /*сhange-language*/
+    .chose__language {
+        width: 34px;
+        height: 34px;
+    }
+
+    .chose__language:after {
+        width: 32px;
+        height: 32px;
+    }
+
+    /*logo*/
+    .logo {
+        width: 57px;
+        height: 34px;
+        display: block;
+    }
+
+
+    /*main*/
+    main {
+        top: 41%;
     }
 
     main .text__content h1 {
-        font-size: 2.83rem;
-        white-space: normal;
+        font-size: 1.7rem;
     }
 
     main .text__content:before {
         width: 294px;
         height: 294px;
         filter: blur(46px);
+    }
+
+    .show-reel__container {
+        top: 60%;
     }
 
 }
