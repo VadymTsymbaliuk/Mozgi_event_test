@@ -31,9 +31,15 @@ header {
 }
 
 /*сhange-language*/
+
 .chose__language {
     position: relative;
-    padding: 12px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .chose__language:after {
@@ -47,8 +53,14 @@ header {
     border-radius: 50%;
 }
 
-@keyframes changeLanguage {
+.drop__language div {
+    opacity: 0;
+    transition: 0.5s;
+}
 
+.drop__language div.show {
+    opacity: 1;
+    cursor: pointer;
 }
 
 
@@ -311,7 +323,6 @@ main .container {
     /*.body{*/
     /*    p*/
     /*}*/
-
     /*mobile navigation*/
     .nav_bar {
         position: relative;
@@ -340,6 +351,7 @@ main .container {
         left: 0;
         right: 0;
         margin-bottom: 5px;
+        z-index: 10;
     }
 
     .nav_bar .toggle__menu {

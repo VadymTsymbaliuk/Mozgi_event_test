@@ -1,12 +1,6 @@
 <template>
   <header>
-    <div class="select__language-container">
-      <div class="chose__language" @mouseover="changeLanguage">👅</div>
-      <div class="drop__language">
-        <div class="ua">ua</div>
-        <div class="ru">ru</div>
-      </div>
-    </div>
+    <VLanguage />
     <div class="logo__container">
       <svg width="47" height="26" viewBox="0 0 47 26" class="logo" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -47,8 +41,10 @@
 </template>
 
 <script>
+import VLanguage from "@/components/VLanguage";
 export default {
   name: "VHeader",
+  components: {VLanguage},
   methods:{
     openToggleMenu(){
       const toggleMenu = document.querySelector('.navbar-nav')
