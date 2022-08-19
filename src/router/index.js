@@ -9,21 +9,33 @@ const routes = [
     {
         path:'/',
         name:"mainPage",
-        component: MainPage
+        component: MainPage,
+        // meta:{
+        //     transition: 'slide-left'
+        // }
     },
     {
         path: '/who',
         name: 'who',
-        component: Who
+        component: Who,
+        // meta:{
+        //     transition: 'slide-left'
+        // }
     },
     {
         path: '/where',
         name: 'where',
-        component: Where
+        component: Where,
+        // meta:{
+        //     transition: 'slide-left'
+        // }
     },{
         path: '/what',
         name: 'what',
-        component: What
+        component: What,
+        // meta:{
+        //     transition: 'slide-left'
+        // }
     }
 ];
 const router = createRouter({
