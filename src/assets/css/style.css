@@ -84,16 +84,16 @@ header {
 
 /*navigation*/
 
-.nav_bar ul {
+.navbar ul {
     text-decoration: none;
     list-style: none;
 }
 
-.nav_bar .toggle__menu {
+.navbar .toggle__menu {
     display: none;
 }
 
-.nav_bar ul a {
+.navbar ul a {
     position: relative;
     text-decoration: none;
     color: #373737;
@@ -171,11 +171,10 @@ main .container {
 .text__content h1 {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 30%;
     font-size: 5.125rem;
     z-index: 2;
-    transform: translate(-50%, -50%);
-    white-space: nowrap;
+    transform: translate(-20%, -50%);
 }
 
 .text__content:before {
@@ -300,6 +299,8 @@ main .container {
     }
 }
 
+/*media-screen 1024*/
+
 @media screen and (max-width: 1024px) {
     .body {
         font-size: 14px;
@@ -320,28 +321,27 @@ main .container {
 /*max-width: 768px*/
 
 @media screen and (max-width: 767px) {
-    /*.body{*/
-    /*    p*/
-    /*}*/
+
     /*mobile navigation*/
-    .nav_bar {
+    .navbar {
         position: relative;
         width: 22px;
     }
 
-    .nav_bar .navbar-nav {
+    .navbar .navbar-nav {
         opacity: 0;
-        transition: opacity 3s;
-        transform: translateY(10%);
-    }
-
-    .nav_bar .navbar-nav.active {
-        display: block;
-        opacity: 1;
         position: absolute;
         top: 30px;
         right: 0;
-        transform: translateY(20%);
+        transition: opacity 2s, transform 2s;
+        transform: translateY(0%);
+    }
+
+    .navbar .navbar-nav.active {
+        display: block;
+        opacity: 1;
+        z-index: 10;
+        transform: translateY(30%);
     }
 
     .navbar-nav .navbar-item {
@@ -354,7 +354,7 @@ main .container {
         z-index: 10;
     }
 
-    .nav_bar .toggle__menu {
+    .navbar .toggle__menu {
         position: absolute;
         top: 0;
         right: 0;
@@ -367,14 +367,13 @@ main .container {
         margin: 5px;
     }
 
-    .nav_bar .toggle__menu span {
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-
-    .nav_bar .toggle__menu span:before,
-    .nav_bar .toggle__menu span:after {
+    /*.navbar .toggle__menu span {*/
+    /*    position: absolute;*/
+    /*    top: 0;*/
+    /*    left: 0;*/
+    /*}*/
+    .navbar .toggle__menu:before,
+    .navbar .toggle__menu:after {
         content: "";
         display: block;
         position: absolute;
@@ -384,16 +383,16 @@ main .container {
         background-color: #000;
     }
 
-    .nav_bar .toggle__menu span:before {
-        top: -5px;
+    .navbar .toggle__menu:before {
+        top: 0px;
     }
 
-    .nav_bar .toggle__menu span:after {
-        bottom: -5px;
+    .navbar .toggle__menu:after {
+        bottom: 0px;
     }
 
     main .text__content h1 {
-        font-size: 3.4rem;
+        font-size: 3.1rem;
     }
 
     main .text__content:before {
