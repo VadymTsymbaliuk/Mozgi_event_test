@@ -1,5 +1,5 @@
 <template>
-  <div class="nav__container">
+  <div class="container">
     <nav class="navbar">
       <ul class="navbar-nav">
         <li class="navbar-item">
@@ -12,7 +12,7 @@
           <router-link to="/what">what?</router-link>
         </li>
       </ul>
-      <button class="toggle__menu toggle__animation" @click="openToggleMenu" />
+      <button class="navbar__toggle-menu toggle__animation" @click="openToggleMenu" />
     </nav>
   </div>
 </template>

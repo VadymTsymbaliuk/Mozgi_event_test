@@ -32,7 +32,7 @@ header {
 
 /*сhange-language*/
 
-.chose__language {
+.container__chose-language {
     position: relative;
     width: 40px;
     height: 40px;
@@ -42,7 +42,7 @@ header {
     justify-content: center;
 }
 
-.chose__language:after {
+.container__chose-language:after {
     position: absolute;
     content: "";
     top: 0;
@@ -53,12 +53,12 @@ header {
     border-radius: 50%;
 }
 
-.drop__language div {
+.container__language-items div {
     opacity: 0;
     transition: 0.5s;
 }
 
-.drop__language div.show {
+.container__language-items div.show {
     opacity: 1;
     cursor: pointer;
 }
@@ -89,7 +89,7 @@ header {
     list-style: none;
 }
 
-.navbar .toggle__menu {
+.navbar .navbar__toggle-menu {
     display: none;
 }
 
@@ -159,7 +159,7 @@ main .container {
     position: relative;
 }
 
-.text__content {
+.container__title {
     justify-content: center;
     align-items: center;
     position: relative;
@@ -168,7 +168,7 @@ main .container {
     text-align: center;
 }
 
-.text__content h1 {
+.container__title h1 {
     position: absolute;
     top: 50%;
     left: 30%;
@@ -177,7 +177,7 @@ main .container {
     transform: translate(-20%, -50%);
 }
 
-.text__content:before {
+.container__title:before {
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -190,67 +190,53 @@ main .container {
     filter: blur(76px)
 }
 
-
 /*running tape*/
 
-.tape__container span {
+.container__tapes-slider{
     position: absolute;
-    text-align: center;
-    display: inline-block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container__top-tape,
+.container__bottom-tape {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    background: none;
+}
+
+.container__top-tape {
+    transform: skew(230deg, 151deg) scaleY(-1);
+}
+
+.container__bottom-tape {
+    transform: skew(230deg, 151deg);
+}
+
+.container__top-tape span,
+.container__bottom-tape span {
     font-size: 52px;
     font-weight: 700;
-    color: rgba(255, 255, 255, 1);
+    color: #fff;
+    /*color: rgba(255, 255, 255, 1);*/
     text-shadow: 0 0 0 black;
     text-transform: uppercase;
     opacity: 0.1;
     white-space: nowrap;
-}
-
-.top__tape {
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -50%) skew(230deg, 140deg) scaleY(-1);
-    height: 50px;
-    width: 100%;
-    margin: 0 auto;
-    background: none;
-    overflow: hidden;
-}
-
-.top__tape span {
     animation-duration: 30s;
     animation-delay: 0s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.container__top-tape span {
     animation-name: left-dir;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
 }
 
-@keyframes left-dir {
-    0% {
-        transform: translate(160%, 0);
-    }
-    100% {
-        transform: translate(-160%, 0);
-    }
-}
-
-.bottom__tape {
-    position: absolute;
-    top: 50%;
-    transform: translate(0, 100%) skew(230deg, 140deg);
-    height: 50px;
-    width: 100%;
-    margin: 0 auto;
-    overflow: hidden;
-    /*background: #343436;*/
-}
-
-.bottom__tape span {
-    animation-duration: 30s;
-    animation-delay: 0s;
+.container__bottom-tape span {
     animation-name: right-dir;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
 }
 
 @keyframes right-dir {
@@ -262,8 +248,18 @@ main .container {
     }
 }
 
+@keyframes left-dir {
+    0% {
+        transform: translate(160%, 0);
+    }
+    100% {
+        transform: translate(-160%, 0);
+    }
+}
+
+
 /*circle*/
-.show-reel__container {
+.container__show-reel-circle {
     width: 115px;
     height: 115px;
     position: relative;
@@ -272,7 +268,7 @@ main .container {
 }
 
 
-.show-reel__container:after {
+.container__show-reel-circle:after {
     content: "";
     position: absolute;
     top: 50%;
@@ -286,7 +282,7 @@ main .container {
 }
 
 
-.show-reel__container:hover {
+.container__show-reel-circle:hover {
     animation: circle 5s linear infinite;
 }
 
@@ -299,6 +295,17 @@ main .container {
     }
 }
 
+/*transition*/
+/*.fade-enter-from,*/
+/*.fade-leave-to{*/
+/*    opacity: 0;*/
+/*}*/
+
+/*.fade-enter-active,*/
+/*.fade-enter-leave{*/
+/*   transition: opacity 0.5s ease-in-out;*/
+/*}*/
+
 /*media-screen 1024*/
 
 @media screen and (max-width: 1024px) {
@@ -306,12 +313,12 @@ main .container {
         font-size: 14px;
     }
 
-    main .text__content h1 {
+    main .container__title h1 {
         font-size: 4.14rem;
         white-space: normal;
     }
 
-    main .text__content:before {
+    main .container__title:before {
         width: 482px;
         height: 482px;
         filter: blur(76px);
@@ -354,7 +361,7 @@ main .container {
         z-index: 10;
     }
 
-    .navbar .toggle__menu {
+    .navbar .navbar__toggle-menu {
         position: absolute;
         top: 0;
         right: 0;
@@ -367,13 +374,8 @@ main .container {
         margin: 5px;
     }
 
-    /*.navbar .toggle__menu span {*/
-    /*    position: absolute;*/
-    /*    top: 0;*/
-    /*    left: 0;*/
-    /*}*/
-    .navbar .toggle__menu:before,
-    .navbar .toggle__menu:after {
+    .navbar .navbar__toggle-menu:before,
+    .navbar .navbar__toggle-menu:after {
         content: "";
         display: block;
         position: absolute;
@@ -383,19 +385,19 @@ main .container {
         background-color: #000;
     }
 
-    .navbar .toggle__menu:before {
+    .navbar .navbar__toggle-menu:before {
         top: 0px;
     }
 
-    .navbar .toggle__menu:after {
+    .navbar .navbar__toggle-menu:after {
         bottom: 0px;
     }
 
-    main .text__content h1 {
+    main .container__title h1 {
         font-size: 3.1rem;
     }
 
-    main .text__content:before {
+    main .container__title:before {
         width: 359px;
         height: 359px;
         filter: blur(58px)
@@ -407,12 +409,12 @@ main .container {
         font-size: 12px;
     }
 
-    main .text__content h1 {
+    main .container__title h1 {
         font-size: 2.83rem;
         white-space: normal;
     }
 
-    main .text__content:before {
+    main .container__title:before {
         width: 294px;
         height: 294px;
         filter: blur(46px);

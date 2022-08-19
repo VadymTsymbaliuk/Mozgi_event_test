@@ -1,9 +1,9 @@
 <template>
-  <div class="tape__container">
-    <div class="top__tape">
+  <div class="container__tapes-slider">
+    <div class="container__top-tape">
       <span>FULL-CYCLE EVENT AGENCY FULL-CYCLE EVENT AGENCY</span>
     </div>
-    <div class="bottom__tape">
+    <div class="container__bottom-tape">
       <span>FULL-CYCLE EVENT AGENCY FULL-CYCLE EVENT AGENCY</span>
     </div>
   </div>

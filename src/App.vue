@@ -1,5 +1,12 @@
 <template>
-  <router-view/>
+  <router-view v-slot="{Component}">
+    <transition
+        enter-active-class="animate__animated animate__slideInLeft"
+        mode="out-in"
+    >
+      <component :is="Component"/>
+    </transition>
+  </router-view>
 </template>
 
 <script>
@@ -12,15 +19,7 @@ window.addEventListener("DOMContentLoaded", () => {
 })
 
 export default {
-  name: 'App',
-  methods: {
-    logoAnimation() {
-
-    },
-    changeLanguage() {
-      console.log("change language")
-    }
-  }
+  name: 'App'
 }
 </script>
 

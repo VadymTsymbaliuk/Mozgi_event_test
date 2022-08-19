@@ -1,12 +1,12 @@
 <template>
   <main>
     <div class="container">
-      <div class="text__content">
+      <div class="container__title">
         <h1>
           FULL-CYCLE <br/>EVENT AGENCY
         </h1>
         <VTape/>
-        <div class="show-reel__container">
+        <div class="container__show-reel-circle">
           <img src="../assets/img/circle.svg" alt="circle">
         </div>
       </div>
