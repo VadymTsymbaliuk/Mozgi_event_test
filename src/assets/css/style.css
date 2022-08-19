@@ -175,12 +175,14 @@ main .container {
     font-size: 5.125rem;
     z-index: 2;
     transform: translate(-20%, -50%);
+    color: #373737;
 }
 
 .container__title:before {
     position: absolute;
     top: 50%;
-    transform: translate(-50%, -50%);
+    left: 50%;
+    transform: translate(-45%, -40%);
     content: "";
     height: 578px;
     width: 578px;
@@ -192,7 +194,7 @@ main .container {
 
 /*running tape*/
 
-.container__tapes-slider{
+.container__tapes-slider {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -221,7 +223,7 @@ main .container {
     position: absolute;
     font-size: 52px;
     font-weight: 700;
-    color: rgba(255 253 253 / 45%);
+    color: #BEBEBE;
     text-shadow: #000 1px 0 0px, #000 0 1px 0px, #000 -1px 0 0px, #000 0 -1px;
     text-transform: uppercase;
     opacity: 1;
@@ -242,19 +244,19 @@ main .container {
 
 @keyframes right-dir {
     0% {
-        transform: translate(-100%, 0);
+        transform: translate(-180%, 0);
     }
     100% {
-        transform: translate(100%, 0);
+        transform: translate(180%, 0);
     }
 }
 
 @keyframes left-dir {
     0% {
-        transform: translate(100%, 0);
+        transform: translate(180%, 0);
     }
     100% {
-        transform: translate(-100%, 0);
+        transform: translate(-180%, 0);
     }
 }
 
@@ -264,7 +266,7 @@ main .container {
     width: 115px;
     height: 115px;
     position: relative;
-    top: 76%;
+    top: 85%;
     left: 61%;
 }
 
@@ -308,12 +310,14 @@ main .container {
 /*}*/
 
 
-.m-auto{
+.m-auto {
     margin: 0 auto;
 }
-.text-center{
+
+.text-center {
     text-align: center;
 }
+
 /*media-screen 1024*/
 
 @media screen and (max-width: 1024px) {
@@ -331,9 +335,11 @@ main .container {
         height: 482px;
         filter: blur(76px);
     }
+
     .container__top-tape {
         transform: skew(220deg, 145deg) scaleY(-1);
     }
+
     .container__bottom-tape {
         transform: skew(220deg, 145deg);
     }
@@ -418,11 +424,17 @@ main .container {
         height: 359px;
         filter: blur(58px)
     }
+
     .container__top-tape {
-        transform: skew(235deg, 125deg) scaleY(-1);
+        transform: skew(245deg, 125deg) scaleY(-1);
     }
+
     .container__bottom-tape {
-        transform: skew(235deg, 125deg);
+        transform: skew(245deg, 125deg);
+    }
+    .container__top-tape span,
+    .container__bottom-tape span{
+        animation-duration: 20s;
     }
 }
 
