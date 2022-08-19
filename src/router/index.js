@@ -10,32 +10,36 @@ const routes = [
         path:'/',
         name:"mainPage",
         component: MainPage,
-        // meta:{
-        //     transition: 'slide-left'
-        // }
+        meta:{
+            enterClass:'animate__animated animate__flipInY',
+            leaveClass:'animate__animated animate__flipOutY'
+        }
     },
     {
         path: '/who',
         name: 'who',
         component: Who,
-        // meta:{
-        //     transition: 'slide-left'
-        // }
+        meta:{
+            enterClass:'animate__animated animate__flipInY',
+            leaveClass:'animate__animated animate__flipOutY'
+        }
     },
     {
         path: '/where',
         name: 'where',
         component: Where,
-        // meta:{
-        //     transition: 'slide-left'
-        // }
+        meta:{
+            enterClass:'animate__animated animate__flipInY',
+            leaveClass:'animate__animated animate__flipOutY'
+        }
     },{
         path: '/what',
         name: 'what',
         component: What,
-        // meta:{
-        //     transition: 'slide-left'
-        // }
+        meta:{
+            enterClass:'animate__animated animate__flipInY',
+            leaveClass:'animate__animated animate__flipOutY'
+        }
     }
 ];
 const router = createRouter({

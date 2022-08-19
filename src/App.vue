@@ -1,7 +1,8 @@
 <template>
-  <router-view v-slot="{Component}">
+  <router-view v-slot="{Component, route}">
     <transition
-        enter-active-class="animate__animated animate__slideInLeft"
+        :enter-active-class="route.meta.enterClass"
+        :leave-active-class="route.meta.leaveClass"
         mode="out-in"
     >
       <component :is="Component"/>
