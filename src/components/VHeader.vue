@@ -1,6 +1,6 @@
 <template>
   <header>
-    <VLanguage />
+    <VLanguage/>
     <div class="logo__container">
       <svg width="47" height="26" viewBox="0 0 47 26" class="logo" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -19,43 +19,30 @@
         </g>
       </svg>
     </div>
-    <div class="nav__container">
-      <nav class="nav_bar">
-        <ul class="navbar-nav">
-          <li class="navbar-item">
-            <router-link to="/where">where?</router-link>
-          </li>
-          <li class="navbar-item">
-            <router-link to="/who">who?</router-link>
-          </li>
-          <li class="navbar-item">
-            <router-link to="/what">what?</router-link>
-          </li>
-        </ul>
-        <button class="toggle__menu toggle__animation" @click="openToggleMenu">
-          <span></span>
-        </button>
-      </nav>
-    </div>
+    <VNavigation :open-toggle-menu="openToggleMenu"/>
   </header>
 </template>
 
 <script>
 import VLanguage from "@/components/VLanguage";
+import VNavigation from "@/components/VNavigation";
+
 export default {
   name: "VHeader",
-  components: {VLanguage},
-  methods:{
-    openToggleMenu(){
+  components: {VNavigation, VLanguage},
+  methods: {
+    openToggleMenu() {
       const toggleMenu = document.querySelector('.navbar-nav')
       console.log(toggleMenu.classList, toggleMenu.style)
-      if(!toggleMenu.classList.contains('active')){
+      if (!toggleMenu.classList.contains('active')) {
+
         toggleMenu.classList.add('active')
-      }else {
+      } else {
+
         toggleMenu.classList.remove('active')
       }
     },
-    changeLanguage(){
+    changeLanguage() {
       console.log("change language")
     }
   }
