@@ -3,8 +3,10 @@
     <VHeader/>
     <main>
       <div class="container">
-        <router-link to="/">main page</router-link>
-        <h1>What?</h1>
+        <div class="m-auto text-center" >
+          <router-link to="/">main page</router-link>
+          <h1>What?</h1>
+        </div>
       </div>
     </main>
   </div>
